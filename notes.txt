@@ -1,0 +1,2 @@
+dnf download --source nano  --resolve
+rpm2cpio nano-6.0-2.fc36.src.rpm | cpio -idmv

@@ -1,0 +1,12 @@
+{
+  "build": { "dockerfile": "fedora36.dockerfile" },
+
+  "extensions": [
+    "ms-vscode.cpptools", "ms-vscode.cmake-tools", "mhutchie.git-graph"
+  ],
+  "remoteUser": "sbt",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/sbt/.ssh,type=bind"
+  ]
+}
+
