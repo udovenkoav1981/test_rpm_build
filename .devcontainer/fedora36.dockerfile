@@ -37,10 +37,10 @@ RUN dnf install -y \
     wget \
     cmake \
     procps \
+    rpm-build \
     mock \
     cpio \
     xz
-
 
 RUN usermod -a -G mock sbt
 

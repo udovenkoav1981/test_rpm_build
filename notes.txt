@@ -1,2 +1,14 @@
+# скачиваем srpm (--resolve - вместе с зависимостями)
 dnf download --source nano  --resolve
+
+#распаковываем srpm
 rpm2cpio nano-6.0-2.fc36.src.rpm | cpio -idmv
+
+#упаковываем srpm
+rpmbuild -bs  nano.spec --define "_sourcedir $PWD"
+
+#собираем из srpm -> rpm
+mock -r /etc/mock/almalinux-9-x86_64.cfg --rebuild nano-6.0-2.fc36.src.rpm
+
+#смотрим получившийся пакет
+rpm -qip /var/lib/mock/almalinux-9-x86_64/result/nano-6.0-2.el9.x86_64.rpm

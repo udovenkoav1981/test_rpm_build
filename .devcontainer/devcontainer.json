@@ -7,6 +7,9 @@
   "remoteUser": "sbt",
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/sbt/.ssh,type=bind"
-  ]
+  ],
+  "runArgs":[
+    "--privileged"    
+  ]        
 }
 
